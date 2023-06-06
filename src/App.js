@@ -1,12 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.scss";
+import Header from "./components/header";
 
 const App = () => (
-  <div>
-    <div className="section">
-      <div className="notification is-success">Javascript Notes!</div>
-    </div>
-  </div>
+  <Fragment>
+    <Header />
+  </Fragment>
 );
 
 export default App;
