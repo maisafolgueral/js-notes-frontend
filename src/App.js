@@ -1,5 +1,12 @@
 import React from "react";
+import "./App.scss";
 
-const App = () => <p>Javascript Notes</p>;
+const App = () => (
+  <div>
+    <div className="section">
+      <div className="notification is-success">Javascript Notes!</div>
+    </div>
+  </div>
+);
 
 export default App;
