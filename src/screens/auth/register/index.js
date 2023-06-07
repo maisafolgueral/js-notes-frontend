@@ -3,6 +3,7 @@ import { Section, Container, Columns, Card } from "react-bulma-components";
 import Header from "../../../components/header";
 import LogoImage from "../../../assets/images/logo.png";
 import "../../../styles/auth.scss";
+import RegisterForm from "../../../components/auth/register_form";
 
 const RegisterScreen = () => (
   <Fragment>
@@ -21,11 +22,12 @@ const RegisterScreen = () => (
                   </div>
 
                   <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="subtitle has-text-grey has-text-centered is-size-6 has-text-weight-bold">
+                      <p className="column is-12 subtitle has-text-grey has-text-centered is-6 has-text-weight-bold">
                         Your notes on the cloud
-                      </h3>
+                      </p>
                     </div>
+                  <div className="form-wrapper">
+                    <RegisterForm />
                   </div>
                 </Section>
               </Card.Content>
