@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import presentationImage from "../../assets/images/presentation.png";
 import Header from "../../components/header";
 import "../../styles/home.scss";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -24,9 +25,12 @@ function Home() {
                 Lorem ipsum, or lipsum as it is sometimes known, is dummy text
                 used in laying out print.
               </h5>
-              <a className="button is-outlined is-white is-large">
+              <Link
+                to="/register"
+                className="button is-outlined is-white is-large"
+              >
                 <strong>Register for free Now</strong>
-              </a>
+              </Link>
             </div>
 
             <div className="column is-6 is-offset-1">
