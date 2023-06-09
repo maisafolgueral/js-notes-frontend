@@ -11,3 +11,13 @@ nav.navbar {
     }
   }
 }
+
+.navbar-logged {
+  .navbar-menu {
+    background-color: $custom-purple;
+  }
+}
+
+.img-header {
+  background-color: $custom-purple;
+}
