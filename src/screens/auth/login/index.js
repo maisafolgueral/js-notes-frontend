@@ -4,6 +4,7 @@ import { Section, Container, Columns, Card } from "react-bulma-components";
 import Header from "../../../components/header";
 import LogoImage from "../../../assets/images/logo.png";
 import "../../../styles/auth.scss";
+import LoginForm from "../../../components/auth/login_form";
 
 const LoginScreen = () => (
   <Fragment>
@@ -29,6 +30,9 @@ const LoginScreen = () => (
                     </Columns>
                   </Columns>
                   <br />
+                  <div className="form-wrapper">
+                    <LoginForm />
+                  </div>
                 </Section>
               </Card.Content>
             </Card>
