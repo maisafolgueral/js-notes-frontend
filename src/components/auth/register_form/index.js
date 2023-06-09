@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Fragment, useState } from "react";
 import { Button, Columns } from "react-bulma-components";
+import UserService from "../../../services/users";
 import { Redirect } from "react-router-dom";
 
 function RegisterForm() {
@@ -11,6 +12,21 @@ function RegisterForm() {
   const [redirectToLogin, setRedirectToLogin] = useState(false);
   const [error, setError] = useState(false);
 
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    try {
+      const user = await UserService.register({
+        name: name,
+        email: email,
+        password: password,
+      });
+      setRedirectToLogin(true);
+    } catch (error) {
+      setError(true);
+    }
+  };
+
   if (redirectToLogin === true) {
     return <Redirect to={{ pathname: "/login" }} />;
   }
@@ -18,7 +34,7 @@ function RegisterForm() {
   return (
     <Fragment>
       <Columns centered>
-        <form className="form-wrapper">
+        <form className="form-wrapper" onSubmit={handleSubmit}>
           <div className="form-content">
             <div className="field">
               <label className="label" size="small">
