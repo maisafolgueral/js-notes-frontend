@@ -81,15 +81,17 @@ function RegisterForm() {
                 />
               </div>
             </div>
-            <div className="field is-grouped is-grouped-centered">
+            <div
+              className="field is-grouped is-grouped-centered"
+              breakpoint="mobile"
+            >
               <div className="control">
-                <Button
-                  color="custom-purple"
-                  outlined
+                <a
+                  className="button is-white has-text-custom-purple"
                   onClick={(e) => setRedirectToLogin(true)}
                 >
-                  Login
-                </Button>
+                  Login or
+                </a>
               </div>
               <div className="control">
                 <Button color="custom-purple" outlined>
