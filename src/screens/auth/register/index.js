@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Fragment } from "react";
 import { Section, Container, Columns, Card } from "react-bulma-components";
 import Header from "../../../components/header";
@@ -11,28 +12,31 @@ const RegisterScreen = () => (
     <Section size="medium" className="auth">
       <Container>
         <Columns centered>
-          <Columns.Column size={3}>
+          <Columns size={3}>
             <Card>
               <Card.Content>
                 <Section>
-                  <div className="columns is-centered">
-                    <div className="column is-12">
-                      <img src={LogoImage} alt="Logo" />
-                    </div>
-                  </div>
-
-                  <div className="columns">
+                  <Columns centered>
+                    <Columns size={12}>
+                      <img src={LogoImage} />
+                    </Columns>
+                  </Columns>
+                  <br />
+                  <Columns centered>
+                    <Columns size={12}>
                       <p className="column is-12 subtitle has-text-grey has-text-centered is-6 has-text-weight-bold">
                         Your notes on the cloud
                       </p>
-                    </div>
+                    </Columns>
+                  </Columns>
+                  <br />
                   <div className="form-wrapper">
                     <RegisterForm />
                   </div>
                 </Section>
               </Card.Content>
             </Card>
-          </Columns.Column>
+          </Columns>
         </Columns>
       </Container>
     </Section>
