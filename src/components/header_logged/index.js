@@ -6,8 +6,8 @@ import "../../styles/header.scss";
 import UserService from "../../services/users";
 import { Redirect, Link } from "react-router-dom";
 import "../../styles/header.scss";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faList } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
@@ -34,7 +34,9 @@ function HeaderLogged(props) {
             <img src={LogoImage} alt="Logo" />
           </Link>
           <div
-            className={`burguer-logged navbar-burger burger ${isOpen ? "is-active" : ""}`}
+            className={`burguer-logged navbar-burger burger ${
+              isOpen ? "is-active" : ""
+            }`}
             aria-label="menu"
             aria-expanded="false"
             data-target="navbar-menu"
@@ -50,6 +52,19 @@ function HeaderLogged(props) {
           id="navbarBasicExample"
           className={`navbar-menu ${isOpen ? "is-active" : ""}`}
         >
+          <div className="navbar-item navbar-start" align="start">
+            <div className="navbar-item">
+              <Button
+                className="open-button"
+                color="white"
+                outlined
+                onClick={() => props.setIsOpen(true)}
+              >
+                <FontAwesomeIcon icon={faList} />
+              </Button>
+            </div>
+          </div>
+
           <div align="right" className="navbar-item navbar-end">
             <div className="navbar-item">
               <div className={`dropdown is-right ${isOpen ? "is-active" : ""}`}>
