@@ -1,11 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
+import "../../../styles/notes.scss";
 import HeaderLogged from "../../../components/header_logged";
+import Notes from "../../../components/notes";
 
-const NotesScreen = () => (
-  <Fragment>
-    <HeaderLogged />
-    Hello World
-  </Fragment>
-);
+function NotesScreen() {
+  return (
+    <Fragment>
+      <HeaderLogged/>
+      <Notes/>
+    </Fragment>
+  );
+}
 
 export default NotesScreen;

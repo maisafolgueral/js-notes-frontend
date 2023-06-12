@@ -1,0 +1,7 @@
+import React, { Fragment } from "react";
+
+function Notes(props) {
+  return <Fragment>Notes...</Fragment>;
+}
+
+export default Notes;
