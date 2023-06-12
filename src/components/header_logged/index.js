@@ -11,10 +11,15 @@ import "../../styles/header.scss";
 
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const logOut = async () => {
     await UserService.logout();
     setRedirectToHome(true);
+  };
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   if (redirectToHome) {
@@ -25,34 +30,43 @@ function HeaderLogged(props) {
     <nav color="custom-purple" className="navbar navbar-logged img-header">
       <div className="navbar-brand">
         <Link to="/notes">
-          <img src={LogoImage} alt="Logo"/>
+          <img src={LogoImage} alt="Logo" />
         </Link>
         <button
           className={`navbar-burger burger`}
           aria-label="menu"
           aria-expanded="false"
           data-target="navbar-menu"
-        >
-        </button>
+        ></button>
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div align="right" className="navbar-item navbar-end">
           <div className="navbar-item">
-            <div className="dropdown">
+            <div className={`dropdown is-right ${isOpen ? "is-active" : ""}`}>
               <div className="dropdown-trigger">
-                <Button className="button" color="white" outlined>
+                <Button
+                  className="button"
+                  color="white"
+                  onClick={handleMenuToggle}
+                  outlined
+                >
                   <span>Exemplo ▼</span>
                 </Button>
               </div>
-              <div className="dropdown-menu" id="dropdown-menu" role="menu">
-                <div className="dropdown-content">
+              <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div className="dropdown-content is-centered">
                   <div className="dropdown-item">
-                    <Link to="/users/edit">User Edit</Link>
+                    <Link
+                      to="/users/edit"
+                      className="button is-white has-text-custom-purple is-fullwidth"
+                    >
+                      User Edit
+                    </Link>
                   </div>
                   <div className="dropdown-divider" />
                   <div className="dropdown-item">
-                    <a href="#" onClick={logOut}>
+                    <a href="#" onClick={logOut} className="button is-white has-text-custom-purple is-fullwidth">
                       LogOut
                     </a>
                   </div>
