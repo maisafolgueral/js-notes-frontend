@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import { Columns, Button } from "react-bulma-components";
+import { Button } from "react-bulma-components";
 import LogoImage from "../../assets/images/logo-white.png";
 import "../../styles/header.scss";
 import UserService from "../../services/users";
@@ -22,15 +22,18 @@ function HeaderLogged(props) {
   }
 
   return (
-    <nav color="custom-purple" className="navbar navbar-logged">
+    <nav color="custom-purple" className="navbar navbar-logged img-header">
       <div className="navbar-brand">
-        <Columns>
-          <Columns size={11} offset={1}>
-            <Link to="/notes">
-              <img src={LogoImage} alt="Logo" className="img-header" />
-            </Link>
-          </Columns>
-        </Columns>
+        <Link to="/notes">
+          <img src={LogoImage} alt="Logo"/>
+        </Link>
+        <button
+          className={`navbar-burger burger`}
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbar-menu"
+        >
+        </button>
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">
@@ -39,7 +42,7 @@ function HeaderLogged(props) {
             <div className="dropdown">
               <div className="dropdown-trigger">
                 <Button className="button" color="white" outlined>
-                  <span>Leonardo ▼</span>
+                  <span>Exemplo ▼</span>
                 </Button>
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
