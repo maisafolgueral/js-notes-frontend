@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 import HeaderLogged from "../../../components/header_logged";
-import { Columns } from "react-bulma-components";
 import "../../../styles/notes.scss";
 import Notes from "../../../components/notes";
 
@@ -10,11 +9,11 @@ function NotesScreen() {
   return (
     <Fragment>
       <HeaderLogged setIsOpen={setIsOpen} />
-      <Columns centered>
-        <Columns size="half">
+      <div className="columns is-centered">
+        <div className="column half">
           <Notes isOpen={isOpen} setIsOpen={setIsOpen} />
-        </Columns>
-      </Columns>
+        </div>
+      </div>
     </Fragment>
   );
 }

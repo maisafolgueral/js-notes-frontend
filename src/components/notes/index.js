@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "../../styles/notes.scss";
-import { push as Menu } from "react-burger-menu";
+import { slide as Menu } from "react-burger-menu";
 
 function Notes(props) {
   return (
@@ -16,17 +16,15 @@ function Notes(props) {
           customCrossIcon={false}
         >
           <div>
-            <div className="columns is-centered">
+            <div className="columns">
               <div className="column is-10 is-offset-1">Search...</div>
             </div>
           </div>
           <p>List...</p>
         </Menu>
-        
-        <div className="columns is-centered">
-          <div className="column is-12 notes-editor" id="notes-editor">
-            Editor...
-          </div>
+
+        <div className="column is-12 notes-editor" id="notes-editor">
+          Editor...
         </div>
       </div>
     </Fragment>
