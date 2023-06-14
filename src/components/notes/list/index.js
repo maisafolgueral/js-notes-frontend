@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import Moment from "moment";
 import "../../../styles/notes.scss";
 import { Button } from "react-bulma-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function ListNotes(props) {
   return (
@@ -41,6 +43,13 @@ function ListNotes(props) {
                 <span class="tag is-dark">
                   {Moment(item.created_at).format("DD/MM")}
                 </span>
+              </div>
+              <div className="column is-2">
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  onClick={() => props.deleteNote(item)}
+                  color="grey"
+                />
               </div>
             </div>
             <br />
