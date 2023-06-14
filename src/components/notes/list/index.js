@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Moment from "moment";
 import "../../../styles/notes.scss";
+import { Button } from "react-bulma-components";
 
 function ListNotes(props) {
   return (
@@ -8,6 +9,18 @@ function ListNotes(props) {
       <div className="columns" breakpoint="mobile">
         <div className="column is-6 is-offset-1">
           <h6 class="title is-6">{props.notes.length} Notes</h6>
+        </div>
+
+        <div className="column is-2">
+          <Button
+            state="active"
+            color="custom-purple"
+            outlined
+            size="small"
+            onClick={() => props.createNote()}
+          >
+            Notes +{" "}
+          </Button>
         </div>
       </div>
       <ul className="notes-list">
@@ -17,7 +30,7 @@ function ListNotes(props) {
             onClick={() => props.selectNote(item._id)}
             className={item === props.current_note ? "selected" : ""}
           >
-            <h6 class="subtitle is-6">
+            <h6 class="title is-6">
               {item.title.replace(/(<([^>]+)>)/gi, "").substring(0, 15)}
             </h6>
             <h6 class="subtitle is-6" spaced={false}>
@@ -30,7 +43,7 @@ function ListNotes(props) {
                 </span>
               </div>
             </div>
-            <br/>
+            <br />
           </li>
         ))}
       </ul>

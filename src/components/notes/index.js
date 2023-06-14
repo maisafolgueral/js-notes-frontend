@@ -31,6 +31,11 @@ function Notes(props) {
     setCurrentNote(note);
   };
 
+  const createNote = async () => {
+    await NoteService.create();
+    fetchNotes();
+  };
+
   return (
     <Fragment>
       <div className="notes" id="notes">
@@ -53,8 +58,9 @@ function Notes(props) {
             notes={notes}
             selectNote={selectNote}
             current_note={current_note}
+            createNote={createNote}
           />
-          <br/>
+          <br />
         </Menu>
 
         <div className="column is-12 notes-editor" id="notes-editor">
