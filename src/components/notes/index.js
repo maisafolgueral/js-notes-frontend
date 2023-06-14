@@ -4,6 +4,7 @@ import { slide as Menu } from "react-burger-menu";
 import List from "../notes/list";
 import NoteService from "../../services/note";
 import Editor from "../notes/editor";
+import Search from "../notes/search";
 
 function Notes(props) {
   const [notes, setNotes] = useState([]);
@@ -26,6 +27,11 @@ function Notes(props) {
       setNotes([]);
     }
   }
+
+  const searchNotes = async (query) => {
+    const response = await NoteService.search(query);
+    setNotes(response.data);
+  };
 
   const selectNote = (id) => {
     const note = notes.find((note) => {
@@ -67,7 +73,9 @@ function Notes(props) {
         >
           <div>
             <div className="columns">
-              <div className="column is-10 is-offset-1">Search...</div>
+              <div className="column is-10 is-offset-1">
+                <Search searchNotes={searchNotes} fetchNotes={fetchNotes} />
+              </div>
             </div>
           </div>
 
