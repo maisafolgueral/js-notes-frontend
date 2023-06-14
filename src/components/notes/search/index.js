@@ -16,7 +16,7 @@ function Search(props) {
     <div className="columns is-vcentered" breakpoint="mobile">
       <div className="column is-9 is-offset-1">
         <input
-          class="input"
+          className="input"
           type="text"
           name={query}
           value={query}

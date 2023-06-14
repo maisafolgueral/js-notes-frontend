@@ -14,10 +14,6 @@ function Notes(props) {
     id: "",
   });
 
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
   async function fetchNotes() {
     const response = await NoteService.index();
     if (response.data.length >= 1) {
@@ -27,18 +23,6 @@ function Notes(props) {
       setNotes([]);
     }
   }
-
-  const searchNotes = async (query) => {
-    const response = await NoteService.search(query);
-    setNotes(response.data);
-  };
-
-  const selectNote = (id) => {
-    const note = notes.find((note) => {
-      return note._id === id;
-    });
-    setCurrentNote(note);
-  };
 
   const createNote = async () => {
     await NoteService.create();
@@ -59,6 +43,22 @@ function Notes(props) {
     setCurrentNote(updatedNote.data);
   };
 
+  const searchNotes = async (query) => {
+    const response = await NoteService.search(query);
+    setNotes(response.data);
+  };
+
+  const selectNote = (id) => {
+    const note = notes.find((note) => {
+      return note._id === id;
+    });
+    setCurrentNote(note);
+  };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
   return (
     <Fragment>
       <div className="notes" id="notes">
@@ -71,14 +71,11 @@ function Notes(props) {
           customBurgerIcon={false}
           customCrossIcon={false}
         >
-          <div>
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <Search searchNotes={searchNotes} fetchNotes={fetchNotes} />
               </div>
-            </div>
           </div>
-
           <List
             notes={notes}
             selectNote={selectNote}
