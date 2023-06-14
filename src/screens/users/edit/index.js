@@ -1,5 +1,9 @@
 import React, { Fragment } from "react";
 import HeaderLogged from "../../../components/header_logged";
+import UsersEditForm from "../../../components/users/user_edit_form";
+import "../../../styles/users.scss";
+//import UsersEditPasswordForm from "../../../components/users/users_edit_password_form";
+//import UsersDelete from "../../../components/users/users_delete";
 
 const UsersEditScreen = () => (
   <Fragment>
@@ -12,7 +16,9 @@ const UsersEditScreen = () => (
               Informações Pessoais
             </h5>
             <div class="card">
-              <div class="card-content">Users Edit Form...</div>
+              <div class="card-content">
+                <UsersEditForm />
+              </div>
             </div>
           </div>
         </div>
