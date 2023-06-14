@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState } from "react";
 import HeaderLogged from "../../../components/header_logged";
 import "../../../styles/notes.scss";
 import Notes from "../../../components/notes";

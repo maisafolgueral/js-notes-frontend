@@ -21,3 +21,16 @@
 .notes-list {
   padding-left: 20px;
 }
+
+.notes-editor {
+  position: fixed;
+  padding: 0;
+  height: calc(100% - 43px);
+  border: none;
+  outline: none;
+
+  .quill {
+    height: 100%;
+  }
+}
+

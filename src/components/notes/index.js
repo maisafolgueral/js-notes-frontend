@@ -3,6 +3,7 @@ import "../../styles/notes.scss";
 import { slide as Menu } from "react-burger-menu";
 import List from "../notes/list";
 import NoteService from "../../services/note";
+import Editor from "../notes/editor";
 
 function Notes(props) {
   const [notes, setNotes] = useState([]);
@@ -71,8 +72,11 @@ function Notes(props) {
           <br />
         </Menu>
 
-        <div className="column is-12 notes-editor" id="notes-editor">
-          Editor...
+        <div
+          className="column is-12 notes-editor"
+          id="notes-editor"
+        >
+          <Editor note={current_note} />
         </div>
       </div>
     </Fragment>
