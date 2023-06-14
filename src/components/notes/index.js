@@ -44,6 +44,15 @@ function Notes(props) {
     fetchNotes();
   };
 
+  const updateNote = async (oldNote, params) => {
+    const updatedNote = await NoteService.update(oldNote._id, params);
+    const index = notes.indexOf(oldNote);
+    const newNotes = notes;
+    newNotes[index] = updatedNote.data;
+    setNotes(newNotes);
+    setCurrentNote(updatedNote.data);
+  };
+
   return (
     <Fragment>
       <div className="notes" id="notes">
@@ -72,11 +81,8 @@ function Notes(props) {
           <br />
         </Menu>
 
-        <div
-          className="column is-12 notes-editor"
-          id="notes-editor"
-        >
-          <Editor note={current_note} />
+        <div className="column is-12 notes-editor" id="notes-editor">
+          <Editor note={current_note} updateNote={updateNote} />
         </div>
       </div>
     </Fragment>
