@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import HeaderLogged from "../../../components/header_logged";
 import UsersEditForm from "../../../components/users/user_edit_form";
 import "../../../styles/users.scss";
-//import UsersEditPasswordForm from "../../../components/users/users_edit_password_form";
+import UsersEditPasswordForm from "../../../components/users/user_edit_password_form";
 //import UsersDelete from "../../../components/users/users_delete";
 
 const UsersEditScreen = () => (
@@ -27,7 +27,9 @@ const UsersEditScreen = () => (
           <div className="column is-4">
             <h5 class="title is-5 has-text-grey has-text-left">Password</h5>
             <div class="card">
-              <div class="card-content">Users Edit Password Form...</div>
+              <div class="card-content">
+                <UsersEditPasswordForm />
+              </div>
             </div>
           </div>
         </div>
