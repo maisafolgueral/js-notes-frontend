@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Button } from "react-bulma-components";
@@ -12,6 +13,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(localStorage.getItem("user"));
 
   const logOut = async () => {
     await UserService.logout();
@@ -75,7 +77,7 @@ function HeaderLogged(props) {
                     onClick={handleMenuToggle}
                     outlined
                   >
-                    <span>Exemplo ▼</span>
+                    <span>{JSON.parse(user)["name"]} ▼</span>
                   </Button>
                 </div>
                 <div
