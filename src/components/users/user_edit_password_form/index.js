@@ -25,8 +25,8 @@ function UsersEditFormPassword() {
   return (
     <Fragment>
       <form onSubmit={handleSubmit}>
-        <div class="field">
-          <div class="control">
+        <div className="field">
+          <div className="control">
             <label className="has-text-grey label">Password</label>
             <input
               className="input"
@@ -39,8 +39,8 @@ function UsersEditFormPassword() {
             />
           </div>
         </div>
-        <div class="field">
-          <div class="control">
+        <div className="field">
+          <div className="control">
             <label className="has-text-grey label">Password Confirmation</label>
             <input
               type="password"
@@ -53,19 +53,19 @@ function UsersEditFormPassword() {
             />
           </div>
         </div>
-        <div class="field">
-          <div class="control">
+        <div className="field">
+          <div className="control">
             <div className="columns">
               <div className="column has-text-right">
-                <button className="button btn-update" outlined>
+                <button className="button btn-update" outlined="true">
                   Update Password
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="field">
-          <div class="control">
+        <div className="field">
+          <div className="control">
             <div className="columns">
               <div className="column">
                 {status === "error_update" && (

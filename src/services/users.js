@@ -22,7 +22,7 @@ const UserService = {
       headers: { "x-access-token": localStorage.getItem("token") },
     });
   },
-  delete: async () => {
+  deleteUser: async () => {
     await Api.delete("/users", {
       headers: { "x-access-token": localStorage.getItem("token") },
     });
