@@ -15,19 +15,20 @@ Tecnologias utilizadas:
 npm start
 ```
 Página Inicial:
-<img src=""><br/>
-
-Página de Login:
-<img src=""><br/>
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/home-page.png?raw=true"><br/>
 
 Página de Cadastro:
-<img src=""><br/>
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/register-page.png?raw=true"><br/>
 
-Página Inicial - Pós Login:
-<img src=""><br/>
+Página de Login:
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/login-page.png?raw=true"><br/>
+
+Página Inicial - Notas:
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/home-login-page.png?raw=true"><br/>
 
 Página de Notas:
-<img src=""><br/>
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/notes-page.png?raw=true"><br/>
 
 Página de Editar Usuário:
-<img src=""><br/>
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/user-edit-page-1.png?raw=true"><br/>
+<img src="https://github.com/maisafolgueral/js-notes-frontend/blob/main/src/assets/images/user-edit-page-2.png?raw=true"><br/>
